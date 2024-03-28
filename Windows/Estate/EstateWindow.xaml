@@ -1,0 +1,58 @@
+﻿<Window x:Class="RealEstateProject.Windows.Estate.EstateWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RealEstateProject.Windows.Estate"
+        mc:Ignorable="d"
+           Title="Eesoft | Агенство недвижимости | Список недвижимости" Height="450" Width="800"  ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.6*"/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="BackButton" Content="Назад" Width="150" Height="36" Grid.Column="1" HorizontalAlignment="Left" FontFamily="Roboto"  FontSize="18" Click="BackButton_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBlock Text="Недвижимость" FontSize="24px" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Roboto"/>
+        <DataGrid x:Name="estateDG"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False"/>
+        <Button x:Name="AddButton" Content="Добавить" Grid.Row="2" Width="150" Height="36" Grid.Column="1" HorizontalAlignment="Center"  FontSize="18" Click="AddButton_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="ChangeButton" Content="Изменить"  Grid.Row="2" Width="150" Height="36" Grid.Column="1" Grid.ColumnSpan="2" FontSize="18" Click="ChangeButton_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="DeleteButton" Content="Удалить" Grid.Row="2" Width="150" Height="36" Grid.Column="2" HorizontalAlignment="Center" FontSize="18" Click="DeleteButton_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBlock Text="Тип" Margin="94,46,0,13" HorizontalAlignment="Left" Width="48" Grid.Column="2"/>
+        <ComboBox x:Name="typeEstateCB" Grid.Column="2" Margin="122,41,136,17" SelectionChanged="typeEstateCB_SelectionChanged">
+            <ComboBoxItem Content="Квартира" />
+            <ComboBoxItem Content="Дом" />
+            <ComboBoxItem Content="Земля" />
+        </ComboBox>
+    </Grid>
+</Window>

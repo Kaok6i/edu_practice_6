@@ -1,0 +1,64 @@
+﻿<Window x:Class="RealEstateProject.Windows.Demands.DemandsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RealEstateProject.Windows.Demands"
+        mc:Ignorable="d"
+        Title="Eesoft | Агенство недвижимости | Список потребностей" Height="450" Width="800"  ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.6*"/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="BackButton" Content="Назад" Width="150" Height="36" Grid.Column="1" HorizontalAlignment="Left" FontFamily="Roboto"  FontSize="18" Click="BackButton_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBlock Text="Потребности" FontSize="24px" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Roboto"/>
+        <DataGrid x:Name="demandsDG"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False"/>
+        <Button x:Name="AddButton" Content="Добавить" Grid.Row="2" Width="150" Height="36" HorizontalAlignment="Left"  FontSize="18" Click="AddButton_Click" Margin="36,26,0,25" Grid.ColumnSpan="2">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="ChangeButton" Content="Изменить"  Grid.Row="2" Width="150" Height="36" Grid.Column="1" FontSize="18" Click="ChangeButton_Click" Margin="182,26,32,25">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="DeleteButton" Content="Удалить" Grid.Row="2" Width="150" Height="36" Grid.Column="2" HorizontalAlignment="Left" FontSize="18" Click="DeleteButton_Click" Margin="0,26,0,25">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBlock Text="Тип" Margin="181,40,0,25" HorizontalAlignment="Left" Width="38" Grid.Column="2" RenderTransformOrigin="0.465,0.217"/>
+        <ComboBox x:Name="typeEstateCB" Grid.Column="2" Margin="214,33,20,26" SelectionChanged="typeEstateCB_SelectionChanged" Foreground="#FF2D2D2D" BorderBrush="#FF0091EA">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFF0F0F0"/>
+                    <GradientStop Color="#FF0091EA" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <ComboBoxItem Content="Квартира" />
+            <ComboBoxItem Content="Дом" />
+            <ComboBoxItem Content="Земля" />
+        </ComboBox>
+    </Grid>
+</Window>
